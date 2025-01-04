@@ -1,0 +1,28 @@
+{
+  "name": "Genie",
+  "version": "1.0",
+  "description": "All in one wishlists",
+  "permissions": ["storage", "tabs"],
+  "host_permissions": ["https://*.myntra.com/*", "https://*.amazon.in/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.myntra.com/*", "https://www.amazon.in/*"],
+      "js": ["content.js"],
+      "css": ["popup.css"]
+    }
+  ],
+  "action": {
+    "default_icon": {
+      "16": "assets/logo2.png",
+      "24": "assets/logo2.png",
+      "32": "assets/logo2.png"
+    },
+    "default_title": "All in one wishlist",
+    "default_popup": "popup.html"
+  },
+
+  "manifest_version": 3
+}
