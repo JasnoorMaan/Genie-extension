@@ -32,7 +32,6 @@ const Display = () => {
               <h2 className="sub-heading">
                 {vendor.charAt(0).toUpperCase() + vendor.slice(1)} Products
               </h2>
-              {/* <div className="vendor-line"></div> */}
             </div>
 
             <div className="products-grid">

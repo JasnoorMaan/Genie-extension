@@ -14,7 +14,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 2rem;
-  padding: 1rem 0;
+  padding: 1rem 1rem;
 }
 .product-card {
   border: 2px solid #000000;
@@ -32,17 +32,16 @@
   object-fit: cover;
 }
 .product-info {
-  padding: 1.5rem;
+  padding: 1rem;
 }
 .product-price {
   font-size: 1.3rem;
-  padding-top: 0.5rem;
 }
 .product-footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 1rem;
+  padding: 1rem;
 }
 .no-products {
   grid-column: 1 / -1;

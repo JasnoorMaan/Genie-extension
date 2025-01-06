@@ -45,6 +45,12 @@
   .bodyText {
     font-size: 0.75rem;
   }
+  .heading {
+    font-size: 4rem;
+  }
+  .sub-heading {
+    font-size: 1.5rem;
+  }
 }
 .button-main {
   text-decoration: none;
@@ -103,9 +109,10 @@
 }
 
 .footer-content {
+  font-family: var(--font-body);
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   width: 100%;
 }
 

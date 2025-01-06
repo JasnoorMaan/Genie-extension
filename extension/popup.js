@@ -107,7 +107,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     const activeTab = await getActiveTabURL();
-    const vendors = ["myntra.com", "amazon.in", "flipkart.com"];
+    const vendors = ["myntra.com", "amazon.in"];
+    const myDomains = ["genie-extension.vercel.app", "localhost:5173"];
 
     if (!activeTab.url) {
       throw new Error("No active tab URL found");
@@ -121,6 +122,9 @@ document.addEventListener("DOMContentLoaded", async () => {
         const currentWishlist = data[vendor] ? JSON.parse(data[vendor]) : [];
         view(currentWishlist, vendor);
       });
+    } else if (myDomains.some((d) => activeTab.url.includes(d))) {
+      const importText = document.querySelector(".goto");
+      importText.textContent = "Import your wishlists";
     } else {
       const container = document.querySelector(".container");
       if (container) {
