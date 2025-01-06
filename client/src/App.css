@@ -10,6 +10,9 @@
   align-items: center;
   height: 100vh;
 }
+.loader {
+  max-width: 100px;
+}
 .navbar {
   position: fixed;
   top: 0;

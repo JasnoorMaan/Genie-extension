@@ -1,10 +1,10 @@
 import "./App.css";
-import Hero from "./components/Hero";
-import Uses from "./components/Uses";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
-import { Suspense } from "react";
+import { Suspense, lazy } from "react";
 import Loading from "./components/Loading";
+const Hero = lazy(() => import("./components/Hero"));
+const Uses = lazy(() => import("./components/Uses"));
+const Navbar = lazy(() => import("./components/Navbar"));
+const Footer = lazy(() => import("./components/Footer"));
 
 function App() {
   return (
