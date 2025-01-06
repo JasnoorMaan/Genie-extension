@@ -86,12 +86,9 @@ const view = (currentWishlist = [], vendor) => {
     wishlistElement.innerHTML = `<div>Your added items will appear here</div>`;
   }
 };
-
-// Combined DOMContentLoaded event listener
 document.addEventListener("DOMContentLoaded", async () => {
   try {
-    // Setup Go to Genie button
-    const gotoButton = document.querySelector(".goto"); // Use the class from your HTML
+    const gotoButton = document.querySelector(".goto");
     if (gotoButton) {
       gotoButton.addEventListener("click", async () => {
         try {
@@ -99,7 +96,7 @@ document.addEventListener("DOMContentLoaded", async () => {
           const encodedData = btoa(JSON.stringify(data));
           console.log(encodedData);
           chrome.tabs.create({
-            url: `https://genie.vercel.app/?data=${encodedData}`,
+            url: `http://localhost:5173/yourwishlist/?data=${encodedData}`,
           });
         } catch (error) {
           console.error("Error in goto button:", error);
@@ -109,7 +106,6 @@ document.addEventListener("DOMContentLoaded", async () => {
       console.error("Go to Genie button not found");
     }
 
-    // Handle wishlist display
     const activeTab = await getActiveTabURL();
     const vendors = ["myntra.com", "amazon.in", "flipkart.com"];
 

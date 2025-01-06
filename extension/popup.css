@@ -1,28 +1,121 @@
+@font-face {
+  font-family: "Cirka";
+  src: url("assets/CirkaBold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Gilroy";
+  src: url("assets/Gilroy-Black.ttf") format("truetype");
+}
+:root {
+  --color-blue: #6a35ff;
+  --color-yellow: #e5fe40;
+  --color-pink: #f6a69b;
+  --color-green: #29b379;
+  --button-yellow: #ffeb34;
+  --button-yellow-pressed: #cdb900;
+  --button-black: #121212;
+  --button-black-pressed: #3d3d3d;
+  --color-white: #ffffff;
+  --color-black: #0d0d0d;
+
+  --font-heading: "Cirka", sans-serif;
+  --font-body: "Gilroy", sans-serif;
+}
+.logo {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--color-black);
+  text-decoration: none;
+}
+
+.heading {
+  font-family: var(--font-heading);
+  font-size: 8rem;
+  font-weight: 900;
+}
+.sub-heading {
+  font-family: var(--font-body);
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+.bodyText {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+@media (max-width: 768px) {
+  .bodyText {
+    font-size: 0.75rem;
+  }
+}
+.button-main {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  background-color: var(--button-yellow);
+  color: var(--button-black);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border: none;
+  box-shadow: 0 9px var(--button-yellow-pressed);
+}
+.button-sec {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  background-color: var(--button-black);
+  color: var(--color-white);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border: none;
+  box-shadow: 0 9px var(--button-black-pressed);
+  text-decoration: none;
+}
+
+.button-main:active {
+  box-shadow: 0 5px var(--color-black);
+  transform: translateY(0.5rem);
+}
+.button-sec:active {
+  box-shadow: 0 5px var(--color-black);
+  transform: translateY(0.5rem);
+}
 .container {
   width: 500px;
   color: #000000;
   padding: 1rem;
-}
-.title {
-  font-size: 14px;
-  padding: 10px;
-  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .wishlist {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
-  padding: 10px;
+  gap: 1rem;
+  padding: 1rem;
 }
 .wish-item {
   max-width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 10px;
-  border: 1px solid #eee;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem;
+  border: 2px solid #000000;
 }
 
 .wish-image {
@@ -54,35 +147,16 @@
 
 .buttons-container {
   display: flex;
-  gap: 8px;
+  gap: 0.5rem;
   width: 100%;
 }
 
 .visit-button,
 .delete-button {
   flex: 1;
-  padding: 6px 10px;
-  font-size: 0.7rem;
-  border-radius: 10px;
+  padding: 0.5rem 1rem;
+  font-family: var(--font-body);
   border: none;
-}
-
-.visit-button {
-  background-color: #3498db;
-  color: white;
-}
-
-.visit-button:hover {
-  background-color: #2980b9;
-}
-
-.delete-button {
-  background-color: #e74c3c;
-  color: white;
-}
-
-.delete-button:hover {
-  background-color: #c0392b;
 }
 
 @keyframes fadeOut {
@@ -157,16 +231,4 @@
 
 .genie-button.active::after {
   transform: translate(-50%, -50%) rotate(-45deg);
-}
-
-.goto {
-  padding: 6px 10px;
-  font-size: 0.7rem;
-  background-color: #000000;
-  color: #ffffff;
-  border: none;
-  border-radius: 10px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  margin-left: 10px;
 }

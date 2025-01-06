@@ -3,13 +3,23 @@
   "version": "1.0",
   "description": "All in one wishlists",
   "permissions": ["storage", "tabs"],
-  "host_permissions": ["https://*.myntra.com/*", "https://*.amazon.in/*"],
+  "host_permissions": [
+    "https://*.myntra.com/*",
+    "https://*.amazon.in/*",
+    "http://localhost:5173/*",
+    "https://genie-extension.vercel.app/*"
+  ],
   "background": {
     "service_worker": "background.js"
   },
   "content_scripts": [
     {
-      "matches": ["https://www.myntra.com/*", "https://www.amazon.in/*"],
+      "matches": [
+        "https://www.myntra.com/*",
+        "https://www.amazon.in/*",
+        "http://localhost:5173/*",
+        "https://genie-extension.vercel.app/*"
+      ],
       "js": ["content.js"],
       "css": ["popup.css"]
     }

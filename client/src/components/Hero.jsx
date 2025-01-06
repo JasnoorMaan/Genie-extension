@@ -1,4 +1,5 @@
 import "./Hero.css";
+import { Link } from "react-router";
 const Hero = () => {
   return (
     <>
@@ -8,10 +9,10 @@ const Hero = () => {
         <div className="sub-heading hero-subheading">
           Your all in one wishlist
         </div>
-        <button className="button-main hero-button">
+        <Link to="/yourwishlist" className="button-main hero-button">
           <div>Open your Genie</div>
           <img src="/buttonArrow.svg" alt="arrow" className="button-arrow" />
-        </button>
+        </Link>
       </div>
     </>
   );
