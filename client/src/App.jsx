@@ -3,14 +3,18 @@ import Hero from "./components/Hero";
 import Uses from "./components/Uses";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import { Suspense } from "react";
+import Loading from "./components/Loading";
 
 function App() {
   return (
     <>
-      <Navbar />
-      <Hero />
-      <Uses />
-      <Footer />
+      <Suspense fallback={<Loading />}>
+        <Navbar />
+        <Hero />
+        <Uses />
+        <Footer />
+      </Suspense>
     </>
   );
 }

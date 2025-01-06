@@ -31,7 +31,7 @@ const startAmazon = (vendor) => {
 
       genieButton.classList.toggle("active");
       if (genieButton.classList.contains("active")) {
-        genieButton.textContent = "Added to Genie";
+        genieButton.textContent = "Remove";
         await addToWishlist(info, vendor);
       } else {
         genieButton.textContent = "Genie it";
@@ -63,7 +63,7 @@ const startMyntra = (vendor) => {
 
       genieButton.classList.toggle("active");
       if (genieButton.classList.contains("active")) {
-        genieButton.textContent = "Added to Genie";
+        genieButton.textContent = "Remove";
         await addToWishlist(info, vendor);
       } else {
         genieButton.textContent = "Genie it";

@@ -4,6 +4,12 @@
   box-sizing: border-box;
   overflow-x: hidden;
 }
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
 .navbar {
   position: fixed;
   top: 0;
@@ -50,6 +56,9 @@
   }
   .sub-heading {
     font-size: 1.5rem;
+  }
+  .button-main {
+    font-size: 0.75rem;
   }
 }
 .button-main {
