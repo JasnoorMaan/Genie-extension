@@ -1,4 +1,5 @@
 import "../App.css";
+import { Link } from "react-router";
 
 function Footer() {
   return (
@@ -14,7 +15,7 @@ function Footer() {
 
           <div className="footer-column footer-links">
             <h3 className="sub-heading">Support</h3>
-            <a href="#faq">FAQ</a>
+            <Link to="/privacy">Privacy Policy</Link>
             <a href="#help">Help Center</a>
             <a href="#feedback">Feedback</a>
           </div>
