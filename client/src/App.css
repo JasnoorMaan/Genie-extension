@@ -158,3 +158,48 @@
   gap: 1.5rem;
   margin-top: 1rem;
 }
+
+.privacy-container {
+  max-width: 800px;
+  margin: 8rem auto 4rem;
+  padding: 0 2rem;
+}
+
+.privacy-content {
+  margin-top: 2rem;
+}
+
+.privacy-content section {
+  margin: 2rem 0;
+}
+
+.privacy-content .sub-heading {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.privacy-content ul {
+  list-style-type: disc;
+  margin-left: 2rem;
+  margin-top: 1rem;
+}
+
+.privacy-content li {
+  margin-bottom: 0.5rem;
+}
+
+.privacy-content .last-updated {
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+  .privacy-container {
+    margin-top: 6rem;
+    padding: 0 1rem;
+  }
+
+  .privacy-content .sub-heading {
+    font-size: 1.25rem;
+  }
+}
