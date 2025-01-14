@@ -35,7 +35,10 @@ const Hero = () => {
           animate="visible"
           className="hero-button-container"
         >
-          <Link to="/" className="button-sec hero-button">
+          <Link
+            to="https://microsoftedge.microsoft.com/addons/detail/genie/jcihbfcclnmphmncfeplhcbknbijpjme"
+            className="button-sec hero-button"
+          >
             <div>Install from Webstore</div>
             <img
               src="/buttonArrowWhite.svg"

@@ -17,7 +17,7 @@ const Uses = () => {
         </div>
       </div>
       <div className="uses-right">
-        <video src="/video1.mp4" autoPlay loop muted playsInline />
+        <video src="/demo.mp4" autoPlay loop muted playsInline />
       </div>
     </div>
   );
