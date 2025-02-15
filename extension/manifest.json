@@ -1,6 +1,6 @@
 {
   "name": "Genie",
-  "version": "1.0",
+  "version": "1.01",
   "description": "All in one wishlists",
   "permissions": ["storage", "tabs"],
   "host_permissions": [
