@@ -96,7 +96,7 @@ document.addEventListener("DOMContentLoaded", async () => {
           const encodedData = btoa(JSON.stringify(data));
           console.log(encodedData);
           chrome.tabs.create({
-            url: `http://localhost:5173/yourwishlist/?data=${encodedData}`,
+            url: `https://genie-extension.vercel.app/yourwishlist/?data=${encodedData}`,
           });
         } catch (error) {
           console.error("Error in goto button:", error);
