@@ -6,17 +6,17 @@ const Instructions = () => {
       <img
         src="/star 1.svg"
         alt="star 1"
-        className="z-49 absolute top-80 left-20 w-24 h-24"
+        className="z-49 absolute top-20 left-0 w-16 h-16 md:top-80 md:left-20 md:w-24 md:h-24"
       />
       <img
         src="/star2.svg"
         alt="star 2"
-        className="z-49 absolute top-80 left-130 w-24 h-24"
+        className="z-49 absolute top-85 left-0 w-16 h-16 md:top-80 md:left-130 md:w-24 md:h-24"
       />
       <img
         src="/star3.svg"
         alt="star 3"
-        className="z-49 absolute top-76 left-230 w-36 h-36"
+        className="z-49 absolute top-145 left-0 w-24 h-24 md:top-76 md:left-230 md:w-36 md:h-36"
       />
       <div
         className={cn(

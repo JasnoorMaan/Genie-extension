@@ -88,24 +88,6 @@ const view = (currentWishlist = [], vendor) => {
 };
 document.addEventListener("DOMContentLoaded", async () => {
   try {
-    const gotoButton = document.querySelector(".goto");
-    if (gotoButton) {
-      gotoButton.addEventListener("click", async () => {
-        try {
-          const data = await chrome.storage.sync.get(["myntra", "amazon"]);
-          const encodedData = btoa(JSON.stringify(data));
-          console.log(encodedData);
-          chrome.tabs.create({
-            url: `https://genie-extension.vercel.app/yourwishlist/?data=${encodedData}`,
-          });
-        } catch (error) {
-          console.error("Error in goto button:", error);
-        }
-      });
-    } else {
-      console.error("Go to Genie button not found");
-    }
-
     const activeTab = await getActiveTabURL();
     const vendors = ["myntra.com", "amazon.in"];
     const myDomains = ["genie-extension.vercel.app", "localhost:5173"];
@@ -116,13 +98,37 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     const urlParts = new URL(activeTab.url);
     const vendor = urlParts.hostname.split(".")[1];
+    const isOnMyDomain = myDomains.some((d) => activeTab.url.includes(d));
+    const isLocalhost = activeTab.url.includes("localhost:5173");
+
+    const gotoButton = document.querySelector(".goto");
+    if (gotoButton) {
+      gotoButton.addEventListener("click", async () => {
+        try {
+          const data = await chrome.storage.sync.get(["myntra", "amazon"]);
+          const encodedData = btoa(JSON.stringify(data));
+          console.log(encodedData);
+
+          // Determine the correct URL based on current context
+          const targetUrl = isLocalhost
+            ? `http://localhost:5173/yourwishlist/?data=${encodedData}`
+            : `https://genie-extension.vercel.app/yourwishlist/?data=${encodedData}`;
+
+          chrome.tabs.create({ url: targetUrl });
+        } catch (error) {
+          console.error("Error in goto button:", error);
+        }
+      });
+    } else {
+      console.error("Go to Genie button not found");
+    }
 
     if (vendors.some((v) => activeTab.url.includes(v))) {
       chrome.storage.sync.get([vendor], (data) => {
         const currentWishlist = data[vendor] ? JSON.parse(data[vendor]) : [];
         view(currentWishlist, vendor);
       });
-    } else if (myDomains.some((d) => activeTab.url.includes(d))) {
+    } else if (isOnMyDomain) {
       const importText = document.querySelector(".goto");
       importText.textContent = "Import your wishlists";
     } else {
