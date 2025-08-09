@@ -20,20 +20,11 @@
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between; /* Ensures space between logo and button */
-  /* padding: 1rem 2rem; */
+  justify-content: center;
   background-color: var(--color-white);
   border-bottom: 2px solid var(--color-black);
   z-index: 1000;
-}
-.nav-button{
-  background-color: black;
-  color: white;
-  height:100%;
-  width: 100%;
-  display: flex;
-  padding: 1rem 2rem;
-  border-radius: 0;  
+  padding: 0.5rem;
 }
 .logo {
   font-family: var(--font-heading);
@@ -41,12 +32,16 @@
   font-weight: 900;
   color: var(--color-black);
   text-decoration: none;
-  padding-left: 2rem;
 }
 
 .heading {
   font-family: var(--font-heading);
   font-size: 8rem;
+  font-weight: 900;
+}
+.small-heading {
+  font-family: var(--font-heading);
+  font-size: 4rem;
   font-weight: 900;
 }
 .sub-heading {
@@ -60,15 +55,15 @@
   font-weight: 400;
   line-height: 1.5;
 }
-@media (max-width: 768px) {
+@media (min-width: 768px) {
   .bodyText {
-    font-size: 0.75rem;
+    font-size: 1.25rem;
   }
   .heading {
-    font-size: 4rem;
+    font-size: 12rem;
   }
-  .sub-heading {
-    font-size: 1.5rem;
+  .small-heading {
+    font-size: 8rem;
   }
   .button-main {
     font-size: 0.75rem;

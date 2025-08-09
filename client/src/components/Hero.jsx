@@ -35,6 +35,10 @@ const Hero = () => {
           animate="visible"
           className="hero-button-container"
         >
+          <Link to="/yourwishlist" className="button-main hero-button">
+            <div>Open your Genie</div>
+            <img src="/buttonArrow.svg" alt="arrow" className="button-arrow" />
+          </Link>
           <Link
             to="https://microsoftedge.microsoft.com/addons/detail/genie/jcihbfcclnmphmncfeplhcbknbijpjme"
             className="button-sec hero-button"
@@ -45,10 +49,6 @@ const Hero = () => {
               alt="arrow"
               className="button-arrow"
             />
-          </Link>
-          <Link to="/yourwishlist" className="button-main hero-button">
-            <div>Open your Genie</div>
-            <img src="/buttonArrow.svg" alt="arrow" className="button-arrow" />
           </Link>
         </motion.div>
       </div>

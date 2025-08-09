@@ -3,41 +3,40 @@
   border-bottom: 2px solid var(--color-black);
   background-color: var(--color-pink);
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  min-height: 90vh;
-  padding: 2rem;
-  flex-wrap: nowrap;
-  gap: 2rem;
+  min-height: 60vh;
+  padding: 1rem;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 .uses-left {
+  padding-top: 2rem;
   flex: 1;
+  text-align: center;
 }
 .uses-left .bodyText {
-  padding-top: 2rem;
+  padding-top: 1rem;
 }
 .uses-right video {
   width: 100%;
-  height: 100%;
+  height: auto;
+  max-width: min(70vw, 40rem);
   border-radius: 1rem;
-}
-.uses-right {
-  flex: 1;
+  border: 4px solid var(--color-black);
+  object-fit: cover;
 }
 
 @media (max-width: 768px) {
   .uses-container {
-    flex-direction: column;
-    gap: 1rem;
-  }
-  .uses-left {
-    flex: 1;
+    gap: 2rem;
   }
   .uses-right {
     flex: 1;
   }
-  .uses-container .heading {
-    font-size: 3rem;
+  .uses-right video {
+    width: 100%;
+    height: 100%;
   }
 }

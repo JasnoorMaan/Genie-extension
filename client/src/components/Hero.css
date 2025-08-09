@@ -10,7 +10,6 @@
 .hero-button {
   margin-top: 3rem;
 }
-
 .bg-img {
   position: absolute;
   top: 0;
@@ -22,7 +21,13 @@
 }
 .hero-button-container {
   display: flex;
-  flex-direction: row;
-  gap: 2rem;
-  padding: 1rem;
+  flex-direction: column;
+  padding: 2rem;
+}
+@media (min-width: 768px) {
+  .hero-button-container {
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+  }
 }
